@@ -39,7 +39,6 @@ import {
 } from "../../store/actions/tutorialPageActions";
 import useGetSuggestedUsers from "../../helpers/customHooks/useGetSuggestedUsers";
 
-
 function HomePage({ background = "white", textColor = "black" }) {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -62,7 +61,6 @@ function HomePage({ background = "white", textColor = "black" }) {
 
   const { isLoading, suggestedUsers } = useGetSuggestedUsers();
   console.log(suggestedUsers);
-
 
   const windowSize = useWindowSize();
   const [openMenu, setOpen] = useState(false);
@@ -116,33 +114,33 @@ function HomePage({ background = "white", textColor = "black" }) {
     "React"
   ]);
 
-  {/*const [usersToFollow, setUsersToFollow] = useState([
-    {
-      name: "Janvi Thakkar",
-      img: [OrgUser],
-      desg: "Software Engineer",
-      onClick: {}
-    },
-    {
-      name: "Janvi Thakkar",
-      img: [OrgUser],
-      desg: "Software Engineer",
-      onClick: {}
-    },
-    {
-      name: "Janvi Thakkar",
-      img: [OrgUser],
-      desg: "Software Engineer",
-      onClick: {}
-    },
-    {
-      name: "Janvi Thakkar",
-      img: [OrgUser],
-      desg: "Software Engineer",
-      onClick: {}
-    }
-  ]);
-*/}
+  
+  //  const [usersToFollow, setUsersToFollow] = useState([
+  //  {
+  //    name: "Janvi Thakkar",
+  //    img: [OrgUser],
+  //    desg: "Software Engineer",
+  //    onClick: {}
+  //  },
+  //  {
+  //    name: "Janvi Thakkar",
+  //    img: [OrgUser],
+  //    desg: "Software Engineer",
+  //    onClick: {}
+  //  },
+  //  {
+  //    name: "Janvi Thakkar",
+  //    img: [OrgUser],
+  //    desg: "Software Engineer",
+  //    onClick: {}
+  //  },
+  //  {
+  //    name: "Janvi Thakkar",
+  //    img: [OrgUser],
+  //    desg: "Software Engineer",
+  //    onClick: {}
+  //  }
+  //]);
 
 
   const [contributors, setContributors] = useState([
@@ -349,7 +347,8 @@ function HomePage({ background = "white", textColor = "black" }) {
             data-testId="homepageUsersToFollow"
           >
             <Grid item style={{ minWidth: "100%" }}>
-             <UserCard title={"Who to Follow"} users={suggestedUsers} />  
+              
+              <UserCard title={"Who to Follow"} users={suggestedUsers} />
             </Grid>
           </Grid>
           <Grid

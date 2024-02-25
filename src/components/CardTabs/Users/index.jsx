@@ -47,16 +47,17 @@ const UserCard = props => {
           >
             {props.title}
           </Typography>
-          {props.users?.map(function (user, index) {
-            return (
-              <UserElement
-                key={index}
-                user={user}
-                index={index}
-                useStyles={useStyles}
-              />
-            );
-          })}
+
+           {props.users?.map(function (user, index) {
+             return (
+               <UserElement
+                 key={index}
+                 user={user}
+                 index={index}
+                 useStyles={useStyles}
+               />
+             );
+           })}
         </CardContent>
       </Card>
     </div>

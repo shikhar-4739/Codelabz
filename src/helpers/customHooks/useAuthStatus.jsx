@@ -3,8 +3,8 @@ import { isLoaded, isEmpty } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 
 const useAuthStatus = () => {
-  const auth = useSelector(({ firebase }) => firebase.auth);
-  const [authed, setAuthed] = useState(false);
+    const auth = useSelector(({ firebase }) => firebase.auth);
+    const [authed, setAuthed] = useState(false);
 
   useEffect(() => {
     setAuthed(isLoaded(auth) && !isEmpty(auth));
