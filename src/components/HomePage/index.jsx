@@ -37,6 +37,8 @@ import {
   getTutorialFeedData,
   getTutorialFeedIdArray
 } from "../../store/actions/tutorialPageActions";
+import useGetSuggestedUsers from "../../helpers/customHooks/useGetSuggestedUsers";
+
 
 function HomePage({ background = "white", textColor = "black" }) {
   const classes = useStyles();
@@ -57,6 +59,10 @@ function HomePage({ background = "white", textColor = "black" }) {
       link: "https://dev.codelabz.io/"
     }
   ]);
+
+  const { isLoading, suggestedUsers } = useGetSuggestedUsers();
+  console.log(suggestedUsers);
+
 
   const windowSize = useWindowSize();
   const [openMenu, setOpen] = useState(false);
@@ -110,7 +116,7 @@ function HomePage({ background = "white", textColor = "black" }) {
     "React"
   ]);
 
-  const [usersToFollow, setUsersToFollow] = useState([
+  {/*const [usersToFollow, setUsersToFollow] = useState([
     {
       name: "Janvi Thakkar",
       img: [OrgUser],
@@ -136,6 +142,8 @@ function HomePage({ background = "white", textColor = "black" }) {
       onClick: {}
     }
   ]);
+*/}
+
 
   const [contributors, setContributors] = useState([
     {
@@ -294,7 +302,7 @@ function HomePage({ background = "white", textColor = "black" }) {
                 <EventsCard title={"Popular Events"} events={upcomingEvents} />
               </TabPanel>
               <TabPanel value="3" style={{ padding: 0 }}>
-                <UserCard title={"Who to Follow"} users={usersToFollow} />
+                <UserCard title={"Who to Follow"} users={suggestedUsers} />
               </TabPanel>
               <TabPanel value="4" style={{ padding: 0 }}>
                 <UserCard title={"Contributors"} users={contributors} />
@@ -341,7 +349,7 @@ function HomePage({ background = "white", textColor = "black" }) {
             data-testId="homepageUsersToFollow"
           >
             <Grid item style={{ minWidth: "100%" }}>
-              <UserCard title={"Who to Follow"} users={usersToFollow} />
+             <UserCard title={"Who to Follow"} users={suggestedUsers} />  
             </Grid>
           </Grid>
           <Grid
